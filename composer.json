@@ -2,7 +2,7 @@
     "name": "paybreak/luhn",
     "description": "Luhn algorithm implementation",
     "keywords": [
-        ":package_name"
+        "luhn"
     ],
     "homepage": "https://github.com/paybreak/luhn",
     "license": "MIT",
