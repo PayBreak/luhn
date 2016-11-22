@@ -42,8 +42,17 @@ class Luhn
     }
 
     /**
+     * @param $number
+     * @return string
+     */
+    public static function generateString($number)
+    {
+        return ($number . self::checksum($number));
+    }
+
+    /**
      * @author WN
-     * @param int $number
+     * @param int|string $number
      * @param bool $check Set to true if you are calculating checksum for validation
      * @return int
      */

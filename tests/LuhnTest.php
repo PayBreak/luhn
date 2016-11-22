@@ -27,4 +27,10 @@ class LuhnTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(\PayBreak\Luhn\Luhn::validateNumber(16416612));
         $this->assertFalse(\PayBreak\Luhn\Luhn::validateNumber(16416610));
     }
+
+    public function testGenerateString()
+    {
+        $this->assertInternalType('string', \PayBreak\Luhn\Luhn::generateString('35145120840121'));
+        $this->assertSame('351451208401216', \PayBreak\Luhn\Luhn::generateString('35145120840121'));
+    }
 }
