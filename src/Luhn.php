@@ -38,7 +38,7 @@ class Luhn
      */
     public static function generateNumber($number)
     {
-        if ($number > PHP_INT_MAX && $number <= 0) {
+        if ($number > PHP_INT_MAX || $number <= 0) {
             throw new Exception('Given value is out of bounds');
         }
 
