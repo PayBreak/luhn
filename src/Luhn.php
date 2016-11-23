@@ -38,21 +38,36 @@ class Luhn
      */
     public static function generateNumber($number)
     {
-        return (int) ($number . self::checksum($number));
+        if ($number > PHP_INT_MAX && $number <= 0) {
+            throw new Exception('Given value is out of bounds');
+        }
+
+        $result = self::generateString($number);
+
+        if ($result > PHP_INT_MAX) {
+            throw new Exception('Result is out of bounds for integer type');
+        }
+
+        return (int) $result;
     }
 
     /**
-     * @param $number
+     * @author CG
+     * @param int|float|string $number
      * @return string
      */
     public static function generateString($number)
     {
+        if (!is_numeric($number)) {
+            throw new Exception('Given value is not numeric');
+        }
+
         return ($number . self::checksum($number));
     }
 
     /**
      * @author WN
-     * @param int|string $number
+     * @param int|float|string $number
      * @param bool $check Set to true if you are calculating checksum for validation
      * @return int
      */
