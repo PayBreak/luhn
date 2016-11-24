@@ -10,6 +10,11 @@
 
 namespace PayBreak\Luhn;
 
+/**
+ * Exception
+ *
+ * @author WN
+ */
 class Exception extends \Exception
 {
 }
