@@ -78,7 +78,6 @@ class Luhn
         $sum = 0;
 
         foreach ($data as $k => $v) {
-
             $tmp = $v + $v * (int)(($k % 2) xor !$check);
 
             if ($tmp > 9) {
